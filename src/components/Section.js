@@ -1,32 +1,35 @@
 import React from 'react';
 import '../style/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../style/Card.css';
 import mainlogo from '../assets/media/main.png';
 import main from './main';
+import Shuttle1 from './Shuttle1'
+import Shuttle2 from './Shuttle2'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
+
+
 
 const Section = () => {
   return (
     <section class="section">
+    
     <div class="container">
+      <h2 class="section-title">하계방학 운행일정 06.23. ~ 08.29</h2><br/>
       <div class="section-grid">
-        <div>
-          <div class="badge">title</div>
+        <div  class="card-box">
+          <div class="badge">광운대</div>
           
-          <h1 class="section-title">셔틀버스</h1>
-          <p class="section-text">셔틀버스 구역입니다</p>
-          <br />
-          <p id="typing" class="section-text"></p>
+          <Shuttle1 />
 
         </div>
         
-        <div>
-          <div class="badge">title</div>
+        <div  class="card-box">
+          <div class="badge">신창</div>
           
-          <h1 class="section-title">지하철</h1>
-          <p class="section-text">지하철 구역입니다</p>
-          <br />
-          <p id="typing" class="section-text"></p>
+          <Shuttle2 />
 
         </div>
       </div>

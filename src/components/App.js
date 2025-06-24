@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Section />} />
         <Route path="/main" element={<Main />} />
       </Routes>
-      <Link to="/main">Go to About</Link>
+      {/* <Link to="/main">Go to About</Link> */}
     </Router>
     
     </>

@@ -5,19 +5,19 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="container navbar-container">
-        <a href="#" className="logo navbar-brand">SDAILY</a>
+        <a href="./" className="logo navbar-brand">SDAILY</a>
         <ul className="nav-menu">
           <li className="nav-item">
-            <a href="#" className="nav-link active navbar-text">Home</a>
+            <a href="./" className="nav-link active navbar-text">Home</a>
           </li>
           <li className="nav-item">
-            <a href="/myself" className="nav-link navbar-text">소개</a>
+            <a href="/main" className="nav-link navbar-text">소개</a>
           </li>
           <li className="nav-item">
-            <a href="/anmal" className="nav-link navbar-text">con</a>
+            <a href="#" className="nav-link navbar-text">con</a>
           </li>
           <li className="nav-item">
-            <a href="/fairytale" className="nav-link navbar-text">con</a>
+            <a href="#" className="nav-link navbar-text">con</a>
           </li>
           {/* <li className="nav-item hover-nav">
             <a href="#" className="nav-link navbar-text">con&or;</a>
