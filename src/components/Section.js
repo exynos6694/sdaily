@@ -3,7 +3,6 @@ import '../style/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/Card.css';
 import mainlogo from '../assets/media/main.png';
-import main from './main';
 import Shuttle1 from './Shuttle1'
 import Shuttle2 from './Shuttle2'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
