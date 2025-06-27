@@ -11,13 +11,13 @@ const Navbar = () => {
             <a href="./" className="nav-link active navbar-text">Home</a>
           </li>
           <li className="nav-item">
-            <a href="#" className="nav-link navbar-text">식단표</a>
+            <a href="/" className="nav-link navbar-text">식단표</a>
           </li>
           <li className="nav-item">
-            <a href="#" className="nav-link navbar-text">con</a>
+            <a href="/" className="nav-link navbar-text">con</a>
           </li>
           <li className="nav-item">
-            <a href="#" className="nav-link navbar-text">con</a>
+            <a href="/" className="nav-link navbar-text">con</a>
           </li>
           {/* <li className="nav-item hover-nav">
             <a href="#" className="nav-link navbar-text">con&or;</a>
