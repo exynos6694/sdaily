@@ -11,7 +11,7 @@ const Navbar = () => {
             <a href="./" className="nav-link active navbar-text">Home</a>
           </li>
           <li className="nav-item">
-            <a href="/main" className="nav-link navbar-text">소개</a>
+            <a href="#" className="nav-link navbar-text">식단표</a>
           </li>
           <li className="nav-item">
             <a href="#" className="nav-link navbar-text">con</a>

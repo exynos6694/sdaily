@@ -53,8 +53,8 @@ export default function NextDeparture() {
   }
 
   return (
-    <div class='card-box'>
-      <h2 class="section-title">광운대 방면</h2>
+    <div>
+      <h2 class="section-title">신창 방면</h2>
       <p>다음 순환 출발시간: {next.sun}</p>
       <p>다음 전철 도착시간: {next.jeon}</p>
       
