@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import '../style/App.css'
 import Navbar from './Navbar';
 import Section from './Section';
