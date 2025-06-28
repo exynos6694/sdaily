@@ -48,10 +48,14 @@ export default function NextDeparture() {
     const interval = setInterval(update, 1000); // 1분마다 갱신
     return () => clearInterval(interval);
   }, []);
-
-  if (!next) {
+  
+  if (new Date().getDay()===6 || new Date().getDay()===0) {
+    return <div>오늘은 운행하지 않습니다.</div>;
+  }
+  else if (!next) {
     return <div>오늘 운행이 종료되었습니다.</div>;
   }
+
 
   return (
     <div>

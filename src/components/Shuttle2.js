@@ -48,7 +48,10 @@ export default function NextDeparture() {
     return () => clearInterval(interval);
   }, []);
 
-  if (!next) {
+  if (new Date().getDay()===6 || new Date().getDay()===0) {
+    return <div>오늘은 운행하지 않습니다.</div>;
+  }
+  else if (!next) {
     return <div>오늘 운행이 종료되었습니다.</div>;
   }
 
@@ -57,7 +60,6 @@ export default function NextDeparture() {
       <h2 class="section-title">신창 방면</h2>
       <p>다음 순환 출발시간: {next.sun}</p>
       <p>다음 전철 도착시간: {next.jeon}</p>
-      
     </div>
   );
 }
