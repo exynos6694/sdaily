@@ -9,3 +9,27 @@
 .card-box:hover {
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
+  
+.slide-container {
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.slide-open {
+  max-height: 1000px;
+}
+
+.slide-closed {
+  max-height: 0;
+}
+
+.btn-light-purple {
+  
+  color: #cfc5ff;
+  border: 1px solid #cfc5ff;
+}
+
+.btn-light-purple:hover {
+  background-color: #d4c2f0;
+  color: #4d3887;
+}

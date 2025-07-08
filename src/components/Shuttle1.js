@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../style/Navbar.css';
+import '../style/Card.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const schedule = [
@@ -17,27 +18,29 @@ const schedule = [
   { jeon: "17:33", sun: "17:08" },
   { jeon: "18:12", sun: "17:47" },
 ];
-  
+
 function getNextDeparture(schedule) {
   const now = new Date();
-  const nowMinutes = now.getHours() * 60 + now.getMinutes();
+  const nowSeconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
 
   for (let entry of schedule) {
-    const [jeonHour, jeonMin] = entry.sun.split(":").map(Number);
-    const jeonTime = jeonHour * 60 + jeonMin;
+    const [hour, minute] = entry.sun.split(":").map(Number);
+    const targetSeconds = hour * 3600 + minute * 60;
 
-
-    if (jeonTime > nowMinutes) {
-      const minutesLeft = jeonTime - nowMinutes;
-      return { ...entry, minutesLeft };
+    if (targetSeconds > nowSeconds) {
+      const diff = targetSeconds - nowSeconds;
+      const minutesLeft = Math.floor(diff / 60);
+      const secondsLeft = diff % 60;
+      return { ...entry, minutesLeft, secondsLeft };
     }
   }
+
   return null;
 }
 
-
 export default function NextDeparture() {
   const [next, setNext] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     const update = () => {
@@ -45,24 +48,50 @@ export default function NextDeparture() {
     };
 
     update();
-    const interval = setInterval(update, 1000); // 1분마다 갱신
+    const interval = setInterval(update, 1000); // 초 단위 갱신
     return () => clearInterval(interval);
   }, []);
-  
-  if (new Date().getDay()===6 || new Date().getDay()===0) {
-    return <div>오늘은 운행하지 않습니다.</div>;
-  }
-  else if (!next) {
-    return <div>오늘 운행이 종료되었습니다.</div>;
+
+  const today = new Date().getDay();
+  if (today === 0 || today === 6) {
+    return <div className="">오늘은 운행하지 않습니다.</div>;
   }
 
+  if (!next) {
+    return <div className="">오늘 운행이 종료되었습니다.</div>;
+  }
 
   return (
-    <div>
-      <h2 class="section-title">광운대 방면</h2>
-      <p>다음 순환 출발시간: {next.sun} &nbsp;&nbsp;&nbsp;&nbsp;{next.minutesLeft}분 전</p>
-      <p>다음 전철 출발시간: {next.jeon}</p>
-      
+    <div className="">
+      <h2 className="section-title">광운대 방면</h2>
+      <p>다음 순환 출발: <strong>{next.sun}</strong> ({next.minutesLeft}분 전)</p>
+      <p>다음 전철 출발: <strong>{next.jeon}</strong></p>
+      <button
+        className="btn btn-light-purple mt-3"
+        onClick={() => setShowAll(!showAll)}
+      >
+        {showAll ? "▲ 시간표 닫기" : "▼ 전체 시간표 보기"}
+      </button>
+
+      <div className={`slide-container ${showAll ? "slide-open" : "slide-closed"}`}>
+      <table className="table table-bordered mt-3 text-center">
+        <thead className="table-light">
+          <tr>
+            <th>전철 출발</th>
+            <th>순환 출발</th>
+          </tr>
+        </thead>
+        <tbody>
+          {schedule.map((entry, i) => (
+            <tr key={i}>
+              <td>{entry.jeon}</td>
+              <td>{entry.sun}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      </div>
+
     </div>
   );
 }
