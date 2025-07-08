@@ -18,12 +18,13 @@ function App() {
           <Route path="/" element={<Section />} />
         </Routes>
       </Router> */}
-      
-      <Navbar />
-      <Section />
-      <Footer />
-
+      <div className="main">
+        <Navbar />
+        <Section />
+        <Footer />
+      </div>
     </>
+    
     
   );
 }

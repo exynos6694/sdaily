@@ -60,7 +60,7 @@ export default function NextDeparture() {
 
   return (
     <div className="">
-      <h2 className="section-title">광운대 방면</h2>
+      <h2 className="section-title">신창 방면</h2>
       <p>전철 도착: <strong>{next.jeon}</strong></p>
       <p>순환 출발: <strong>{next.sun}</strong></p>
       <button
