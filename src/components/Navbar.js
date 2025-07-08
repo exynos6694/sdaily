@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="container navbar-container">
         <a href="./" className="logo navbar-brand">SDAILY</a>
         <ul className="nav-menu">
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a href="./" className="nav-link active navbar-text">Home</a>
           </li>
           <li className="nav-item">
@@ -18,7 +18,7 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <a href="/" className="nav-link navbar-text">con</a>
-          </li>
+          </li> */}
           {/* <li className="nav-item hover-nav">
             <a href="#" className="nav-link navbar-text">con&or;</a>
             <div className="hover-nav-content">
@@ -29,7 +29,7 @@ const Navbar = () => {
           </li> */}
         </ul>
       </div>
-    </nav>
+  </nav>
   );
 };
 
