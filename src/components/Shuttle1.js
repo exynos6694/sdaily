@@ -78,7 +78,7 @@ export default function NextDeparture() {
   return (
     <div className="">
       <h2 className="section-title">하교(광운대 방향)</h2>
-      <p>다음 순환 출발: <strong>{next.sun}</strong> ({next.minutesLeft}분 전)</p>
+      <p>다음 직행(신창) 출발: <strong>{next.sun}</strong> ({next.minutesLeft}분 전)</p>
       <p>다음 전철 출발: <strong>{next.jeon}</strong></p>
       <button
         className="btn btn-light-purple mt-3"
