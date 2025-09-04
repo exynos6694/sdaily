@@ -14,10 +14,10 @@ const Section = () => {
     <section class="section">
     
     <div class="container">
-      <h2 class="section-title">하계방학 운행일정 06.23. ~ 08.29</h2><br/>
+      <h2 class="section-title">2025학년도 2학기 셔틀버스 운행시간표</h2><br/>
       <div class="section-grid">
         <div  class="card-box">
-          <div class="badge">광운대</div>
+          <div class="badge">광운대 방향</div>
           
           <Shuttle1 />
 
