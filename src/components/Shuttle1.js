@@ -4,7 +4,9 @@ import '../style/Card.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const schedule = [
-
+  { jeon: "09:49", sun: "x" },
+  { jeon: "10:16", sun: "x" },
+  { jeon: "10:36", sun: "x" },
 
   { jeon: "11:00", sun: "10:50" },
   { jeon: "11:29", sun: "11:19" },
@@ -31,6 +33,13 @@ const schedule = [
   { jeon: "21:06", sun: "20:56" },
   { jeon: "21:39", sun: "21:34" },
   { jeon: "22:03", sun: "21:53" },
+  { jeon: "22:14", sun: "x" },
+  { jeon: "22:42", sun: "x" },
+  { jeon: "23:17", sun: "x" },
+  { jeon: "23:45(천안)", sun: "x" },
+
+
+  
 ];
 
 function getNextDeparture(schedule) {
